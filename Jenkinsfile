@@ -1,5 +1,5 @@
 pipeline {
-	agent any
+	agent 'ubuntu'
 
 	stages {
 		stage ('Build') {
@@ -12,14 +12,14 @@ pipeline {
 		stage ('Test') {
 			steps {
 				echo 'Test...'
-				bat label: '', script: 'test.bat'
+				sh label: '', script: 'test.sh'
 			}			
 		}
 
 		stage ('Deploy') {
 			steps {
 				echo 'Deploy...'
-				bat label: '', script: 'deploy.bat'
+				sh label: '', script: 'deploy.sh'
 			}			
 		}
 	}
