@@ -7,7 +7,8 @@ pipeline {
 		stage ('Build') {
 			steps {
 				echo 'Build...'
-				git 'https://github.com/anhkhoa14592/Jenkins.git'					
+				git 'https://github.com/anhkhoa14592/Jenkins.git'
+				sh label: '', script: 'ifconfig'
 			}			
 		}
 
