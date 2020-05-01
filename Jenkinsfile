@@ -8,21 +8,20 @@ pipeline {
 			steps {
 				echo 'Build...'
 				git 'https://github.com/anhkhoa14592/Jenkins.git'
-				sh label: '', script: 'ifconfig'
 			}			
 		}
 
 		stage ('Test') {
 			steps {
 				echo 'Test...'
-				sh label: '', script: 'test.sh'
+				sh label: '', script: 'sh test.sh'
 			}			
 		}
 
 		stage ('Deploy') {
 			steps {
 				echo 'Deploy...'
-				sh label: '', script: 'deploy.sh'
+				sh label: '', script: 'sh deploy.sh'
 			}			
 		}
 	}
